@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input,
+        button {
+            margin-bottom: 16px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Adjust the position of the checkbox and label */
+        #acceptTerms {
+            margin-right: 8px;
+            /* Increase or decrease this value to adjust the spacing */
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        #acceptTerms {
+            margin-right: -8px;
+        }
+
+        #entriesTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        #entriesTable th,
+        #entriesTable td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #entriesTable th {
+            background-color: #fdfdfd;
+            color: #000000;
+        }
+
+        #entriesTableBody tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Registration form</h1>
+    <div class="container">
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+            <span id="nameError" class="error"></span>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            <span id="emailError" class="error"></span>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="********" required>
+            <span id="passwordError" class="error"></span>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" placeholder="YYYY-MM-DD" required>
+            <span id="dobError" class="error"></span>
+
+            <input type="checkbox" id="acceptTerms" name="acceptTerms" required>
+            <label for="acceptTerms">I accept the terms and conditions</label>
+            <span id="acceptTermsError" class="error"></span>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+        <h2>Entries</h2>
+        <table id="entriesTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Date of Birth</th>
+                    <th>Accepted Terms</th>
+                </tr>
+            </thead>
+            <tbody id="entriesTableBody"></tbody>
+        </table>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
